@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
+import { DEMO_PASSWORD, DEMO_USER, makeFakeJwt } from '@/mocks/handlers';
+import { server } from '@/mocks/server';
 import { decodeJwtPayload } from '@/utils/jwt.util';
-import { DEMO_PASSWORD, DEMO_USER, makeFakeJwt } from './handlers';
-import { server } from './server';
 
 const API = 'http://localhost/api';
 

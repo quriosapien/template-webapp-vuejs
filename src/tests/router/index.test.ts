@@ -2,8 +2,8 @@ import { createPinia, setActivePinia } from 'pinia';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { createMemoryHistory } from 'vue-router';
 import { DEMO_USER } from '@/mocks/handlers';
+import { createAppRouter } from '@/router';
 import { useAuthStore } from '@/stores/auth.store';
-import { createAppRouter } from './index';
 
 describe('router auth guard', () => {
   beforeEach(() => {

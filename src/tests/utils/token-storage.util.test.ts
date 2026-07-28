@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { tokenStorage } from './token-storage.util';
+import { tokenStorage } from '@/utils/token-storage.util';
 
 describe('tokenStorage', () => {
   beforeEach(() => {

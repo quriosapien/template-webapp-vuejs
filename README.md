@@ -83,7 +83,7 @@ src/
   router/     # route table and the auth navigation guard
   stores/     # Pinia stores (*.store.ts)
   styles/     # global CSS (Tailwind entrypoint)
-  test/       # Vitest global setup (MSW lifecycle, storage cleanup)
+  tests/      # Vitest specs, mirroring src/, plus global setup (MSW lifecycle, storage cleanup)
   types/      # shared TypeScript types (*.types.ts)
   utils/      # framework-agnostic helpers (*.util.ts)
   views/      # routed page components (*.view.vue)
@@ -163,7 +163,7 @@ Kebab-case filenames with a role suffix, always imported through the `@/` alias:
 | `*.util.ts` | Framework-agnostic helper |
 | `*.types.ts` | Shared TypeScript types |
 | `*.constant.ts` | Shared constants |
-| `*.test.ts` | Colocated unit test |
+| `*.test.ts` | Unit test (in `src/tests/`, mirrors `src/` structure) |
 
 ## Code style consistency
 

@@ -5,7 +5,7 @@ import { createMemoryHistory } from 'vue-router';
 import { DEMO_PASSWORD, DEMO_USER } from '@/mocks/handlers';
 import { createAppRouter } from '@/router';
 import { useAuthStore } from '@/stores/auth.store';
-import LoginView from './login.view.vue';
+import LoginView from '@/views/login.view.vue';
 
 async function mountLogin() {
   const pinia = createPinia();

@@ -1,10 +1,10 @@
 import { HttpResponse, http } from 'msw';
 import { describe, expect, it } from 'vitest';
+import { HttpError, httpRequest } from '@/api/http.client';
 import { DEMO_USER, makeFakeJwt } from '@/mocks/handlers';
 import { server } from '@/mocks/server';
 import type { User } from '@/types/auth.types';
 import { tokenStorage } from '@/utils/token-storage.util';
-import { HttpError, httpRequest } from './http.client';
 
 describe('httpRequest', () => {
   it('attaches the bearer token to authenticated requests', async () => {

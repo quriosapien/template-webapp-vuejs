@@ -1,8 +1,8 @@
 import { createPinia, setActivePinia } from 'pinia';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { DEMO_PASSWORD, DEMO_USER, makeFakeJwt } from '@/mocks/handlers';
+import { useAuthStore } from '@/stores/auth.store';
 import { tokenStorage } from '@/utils/token-storage.util';
-import { useAuthStore } from './auth.store';
 
 describe('useAuthStore', () => {
   beforeEach(() => {

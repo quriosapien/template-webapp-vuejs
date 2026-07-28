@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { parseEnv } from './env';
+import { parseEnv } from '@/config/env';
 
 describe('parseEnv', () => {
   it('applies defaults when optional vars are missing', () => {

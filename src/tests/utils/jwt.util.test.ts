@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { decodeJwtPayload, isTokenExpired } from './jwt.util';
+import { decodeJwtPayload, isTokenExpired } from '@/utils/jwt.util';
 
 /** Builds an unsigned JWT-shaped token, mirroring what the MSW handlers issue. */
 function makeToken(payload: Record<string, unknown>): string {
