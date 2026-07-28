@@ -11,7 +11,7 @@ real backend), Tailwind CSS v4, and Vitest unit tests. It mirrors the convention
 | --- | --- |
 | [Vite](https://vitejs.dev) | Dev server and production build |
 | [vue-tsc](https://github.com/vuejs/language-tools) | Typecheck (`npm run typecheck`) — the only checker that understands `.vue` SFC `<template>` blocks; plain `tsc`/`tsgo` cannot parse them |
-| [Biome](https://biomejs.dev) | Lint + format (no ESLint, no Prettier). Biome's `.vue` support covers `<script>` blocks only — template expressions are left to vue-tsc |
+| [Biome](https://biomejs.dev) | Lint + format (no ESLint, no Prettier). Biome's `.vue` support covers `<script>` blocks only — template expressions are left to vue-tsc. Unused-import/variable rules are disabled for `.vue` (see below) since vue-tsc already enforces them with full template awareness |
 | [Vitest](https://vitest.dev) + [@vue/test-utils](https://test-utils.vuejs.org) + [MSW](https://mswjs.io) | Unit tests, component mounting, and API mocking |
 | [lefthook](https://github.com/evilmartians/lefthook) | Git hooks (pre-commit lint) |
 | [Tailwind CSS v4](https://tailwindcss.com) | Styling, via `@tailwindcss/vite` |
@@ -175,3 +175,12 @@ Three layers keep formatting and linting consistent without relying on memory:
 2. **Pre-commit** — lefthook runs `biome check --write` on staged files before every commit.
 3. **CI backstop** — `npm run lint:ci` (`biome ci .`) fails the build on any remaining issue,
    catching anything a contributor's editor or hook missed.
+
+Biome only parses the `<script>` block of a `.vue` SFC — it can't see `<template>`. That means
+anything declared in `<script setup>` but only referenced in the template (a component import, a
+`ref`, an event handler) would otherwise be flagged as unused. `biome.json` disables
+`correctness/noUnusedImports`, `correctness/noUnusedVariables`, and
+`style/useVueMultiWordComponentNames` for `**/*.vue` for this reason — `vue-tsc` (via
+`noUnusedLocals`/`noUnusedParameters` in `tsconfig.json`, run through `npm run typecheck`) already
+type-checks script and template together, so unused-binding detection for `.vue` files isn't
+lost, just handled by the tool that can see the whole file.
