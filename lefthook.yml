@@ -1,0 +1,9 @@
+# Git hooks managed by lefthook (Go binary — fast, no Node startup cost).
+# Installed automatically via the "prepare" npm script on `npm install`.
+pre-commit:
+  parallel: true
+  commands:
+    biome:
+      glob: '*.{js,ts,jsx,tsx,json,jsonc,vue,css}'
+      run: npx biome check --write --no-errors-on-unmatched {staged_files}
+      stage_fixed: true

@@ -1,0 +1,57 @@
+{
+  "name": "template-webapp-vue-ts7",
+  "version": "0.1.0",
+  "description": "Production-grade Vue 3 + TypeScript webapp template (Vite, Vue Router, Pinia, JWT auth, MSW).",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=26"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "lint:ci": "biome ci .",
+    "format": "biome format --write .",
+    "test": "NODE_OPTIONS=--no-experimental-webstorage vitest run",
+    "test:watch": "NODE_OPTIONS=--no-experimental-webstorage vitest",
+    "prepare": "lefthook install"
+  },
+  "dependencies": {
+    "pinia": "^3.0.4",
+    "vue": "^3.5.40",
+    "vue-router": "^4.6.4",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.6",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.1.2",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "@vue/test-utils": "^2.4.11",
+    "jsdom": "^30.0.0",
+    "lefthook": "^2.1.10",
+    "msw": "^2.15.0",
+    "sharp": "^0.35.3",
+    "svgo": "^4.0.2",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vite": "^8.1.5",
+    "vite-plugin-image-optimizer": "^2.0.3",
+    "vitest": "^4.1.10",
+    "vue-tsc": "^3.3.8"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true,
+    "lefthook@2.1.10": true,
+    "msw@2.15.0": true
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
+}

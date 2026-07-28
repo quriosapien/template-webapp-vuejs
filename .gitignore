@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Test/coverage output
+coverage/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment files — keep only .env.example committed
+.env
+.env.local
+.env.development
+.env.test
+.env.staging
+.env.production
+
+# Editor / OS
+.DS_Store
+*.swp
+.idea/
