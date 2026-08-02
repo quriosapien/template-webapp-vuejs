@@ -1,4 +1,4 @@
-const REFRESH_TOKEN_KEY = 'template-webapp-vue-ts7.refreshToken';
+const REFRESH_TOKEN_KEY = 'template-webapp.refreshToken';
 
 /**
  * Access token lives ONLY in memory — it is short-lived and re-obtainable, so
