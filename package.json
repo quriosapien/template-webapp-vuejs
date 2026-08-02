@@ -32,17 +32,17 @@
     "@types/node": "^26.1.2",
     "@vitejs/plugin-vue": "^6.0.8",
     "@vue/test-utils": "^2.4.11",
-    "jsdom": "^30.0.0",
+    "jsdom": "^30.0.1",
     "lefthook": "^2.1.10",
     "msw": "^2.15.0",
     "sharp": "^0.35.3",
     "svgo": "^4.0.2",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3",
-    "vite": "^8.1.5",
+    "vite": "^8.2.0",
     "vite-plugin-image-optimizer": "^2.0.3",
     "vitest": "^4.1.10",
-    "vue-tsc": "^3.3.8"
+    "vue-tsc": "^3.3.9"
   },
   "allowScripts": {
     "fsevents@2.3.3": true,
