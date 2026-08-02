@@ -1,6 +1,6 @@
 # template-webapp-vue-ts7
 
-A production-grade Vue 3 + TypeScript webapp template: Vite 7+, Vue Router 4, Pinia, JWT
+A production-grade Vue 3 + TypeScript webapp template: Vite 8, Vue Router 5, Pinia 4, JWT
 authentication with refresh-token rotation, an MSW-mocked API (with a ready dev-proxy switch to a
 real backend), Tailwind CSS v4, and Vitest unit tests. It mirrors the conventions of
 `template-webserver-ts7` and its sibling `template-webapp-react-ts7`.
