@@ -1,5 +1,5 @@
 {
-  "name": "template-webapp-vue-ts7",
+  "name": "template-webapp-vuejs",
   "version": "0.1.0",
   "description": "Production-grade Vue 3 + TypeScript webapp template (Vite, Vue Router, Pinia, JWT auth, MSW).",
   "type": "module",

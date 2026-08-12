@@ -8,7 +8,7 @@ const booleanString = z.enum(['true', 'false']).transform((value) => value === '
  * vars on import.meta.env; this module is the ONLY place that reads them.
  */
 const envSchema = z.object({
-  VITE_APP_NAME: z.string().min(1).default('template-webapp-vue-ts7'),
+  VITE_APP_NAME: z.string().min(1).default('template-webapp-vuejs'),
   VITE_API_BASE_URL: z.string().min(1).default('/api'),
   VITE_USE_MSW: booleanString.default(false),
 });

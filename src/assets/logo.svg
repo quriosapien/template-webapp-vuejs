@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <title>template-webapp-vue-ts7 logo</title>
+  <title>template-webapp-vuejs logo</title>
   <circle cx="32" cy="32" r="28" fill="#42b883" />
   <text x="32" y="41" font-size="26" text-anchor="middle" fill="#ffffff" font-family="sans-serif">V</text>
 </svg>
