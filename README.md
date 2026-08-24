@@ -10,7 +10,7 @@ real backend), Tailwind CSS v4, and Vitest unit tests. It mirrors the convention
 | Tool | Role |
 | --- | --- |
 | [Vite](https://vitejs.dev) | Dev server and production build |
-| [vue-tsc](https://github.com/vuejs/language-tools) | Typecheck (`npm run typecheck`) — the only checker that understands `.vue` SFC `<template>` blocks; plain `tsc`/`tsgo` cannot parse them |
+| [vue-tsc](https://github.com/vuejs/language-tools) | Typecheck (`npm run typecheck`) — the only checker that understands `.vue` SFC `<template>` blocks; plain `tsc` cannot parse them. Held at TypeScript 6: vue-tsc resolves `typescript/lib/tsc`, which TypeScript 7 no longer exports |
 | [Biome](https://biomejs.dev) | Lint + format (no ESLint, no Prettier). Biome's `.vue` support covers `<script>` blocks only — template expressions are left to vue-tsc. Unused-import/variable rules are disabled for `.vue` (see below) since vue-tsc already enforces them with full template awareness |
 | [Vitest](https://vitest.dev) + [@vue/test-utils](https://test-utils.vuejs.org) + [MSW](https://mswjs.io) | Unit tests, component mounting, and API mocking |
 | [lefthook](https://github.com/evilmartians/lefthook) | Git hooks (pre-commit lint) |
