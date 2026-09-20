@@ -6,6 +6,7 @@ dist/
 
 # Test/coverage output
 coverage/
+.vitest/
 
 # Logs
 logs/
