@@ -18,13 +18,14 @@ real backend), Tailwind CSS v4, and Vitest unit tests. It mirrors the convention
 
 **Note:** `vue-tsc`'s installed major does not yet support TypeScript 7's new package
 `exports` map (`ERR_PACKAGE_PATH_NOT_EXPORTED` on `typescript/lib/tsc`). This template pins
-`typescript` to the latest 5.x release as a result — vue-tsc is non-negotiable since it is the
+`typescript` to the latest 6.x release as a result — vue-tsc is non-negotiable since it is the
 only checker that understands SFC templates, so this is the side that gives way until vue-tsc
 publishes TS7 support.
 
 ## Requirements
 
 - Node.js >= 26 (`.nvmrc` pins `26`; run `nvm use`)
+- npm >= 12. Node 26 bundles npm 11, so run `npm install -g npm@12` once per Node install. Enforced by `devEngines`: on an older Node or npm, npm commands fail with `EBADDEVENGINES`.
 
 ## Getting started
 
