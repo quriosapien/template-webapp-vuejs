@@ -2,7 +2,7 @@ import { afterAll, afterEach, beforeAll } from 'vitest';
 import { server } from '@/mocks/server';
 import { tokenStorage } from '@/utils/token-storage.util';
 
-beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
+beforeAll(() => server.listen({ onUnhandledFrame: 'error' }));
 
 afterEach(() => {
   server.resetHandlers();
