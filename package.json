@@ -39,27 +39,26 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.14",
+    "@biomejs/biome": "^2.5.15",
     "@tailwindcss/vite": "^4.3.3",
-    "@types/node": "^26.6.3",
+    "@types/node": "^26.6.4",
     "@vitejs/plugin-vue": "^6.0.9",
     "@vue/test-utils": "^2.5.1",
     "jsdom": "^30.1.1",
-    "lefthook": "^2.1.14",
-    "msw": "^2.15.0",
+    "lefthook": "^2.1.16",
+    "msw": "^3.0.2",
     "sharp": "^0.35.5",
     "svgo": "^4.1.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
-    "vite": "^8.3.1",
+    "vite": "^8.3.2",
     "vite-plugin-image-optimizer": "^2.0.3",
-    "vitest": "^5.0.2",
-    "vue-tsc": "^3.3.11"
+    "vitest": "^5.0.3",
+    "vue-tsc": "^3.3.12"
   },
   "allowScripts": {
     "fsevents@2.3.3": true,
-    "lefthook@2.1.14": true,
-    "msw@2.15.0": true
+    "lefthook@2.1.16": true
   },
   "msw": {
     "workerDirectory": [
