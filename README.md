@@ -7,14 +7,14 @@ real backend), Tailwind CSS v4, and Vitest unit tests. It mirrors the convention
 
 ## Toolchain
 
-| Tool | Role |
-| --- | --- |
-| [Vite](https://vitejs.dev) | Dev server and production build |
-| [vue-tsc](https://github.com/vuejs/language-tools) | Typecheck (`npm run typecheck`) — the only checker that understands `.vue` SFC `<template>` blocks; plain `tsc` cannot parse them. Held at TypeScript 6: vue-tsc resolves `typescript/lib/tsc`, which TypeScript 7 no longer exports |
-| [Biome](https://biomejs.dev) | Lint + format (no ESLint, no Prettier). Biome's `.vue` support covers `<script>` blocks only — template expressions are left to vue-tsc. Unused-import/variable rules are disabled for `.vue` (see below) since vue-tsc already enforces them with full template awareness |
-| [Vitest](https://vitest.dev) + [@vue/test-utils](https://test-utils.vuejs.org) + [MSW](https://mswjs.io) | Unit tests, component mounting, and API mocking |
-| [lefthook](https://github.com/evilmartians/lefthook) | Git hooks (pre-commit lint) |
-| [Tailwind CSS v4](https://tailwindcss.com) | Styling, via `@tailwindcss/vite` |
+| Tool                                                                                                     | Role                                                                                                                                                                                                                                                                       |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Vite](https://vitejs.dev)                                                                               | Dev server and production build                                                                                                                                                                                                                                            |
+| [vue-tsc](https://github.com/vuejs/language-tools)                                                       | Typecheck (`npm run typecheck`) — the only checker that understands `.vue` SFC `<template>` blocks; plain `tsc` cannot parse them. Held at TypeScript 6: vue-tsc resolves `typescript/lib/tsc`, which TypeScript 7 no longer exports                                       |
+| [Biome](https://biomejs.dev)                                                                             | Lint + format (no ESLint, no Prettier). Biome's `.vue` support covers `<script>` blocks only — template expressions are left to vue-tsc. Unused-import/variable rules are disabled for `.vue` (see below) since vue-tsc already enforces them with full template awareness |
+| [Vitest](https://vitest.dev) + [@vue/test-utils](https://test-utils.vuejs.org) + [MSW](https://mswjs.io) | Unit tests, component mounting, and API mocking                                                                                                                                                                                                                            |
+| [lefthook](https://github.com/evilmartians/lefthook)                                                     | Git hooks (pre-commit lint)                                                                                                                                                                                                                                                |
+| [Tailwind CSS v4](https://tailwindcss.com)                                                               | Styling, via `@tailwindcss/vite`                                                                                                                                                                                                                                           |
 
 **Note:** `vue-tsc`'s installed major does not yet support TypeScript 7's new package
 `exports` map (`ERR_PACKAGE_PATH_NOT_EXPORTED` on `typescript/lib/tsc`). This template pins
@@ -41,19 +41,19 @@ Open the printed URL and sign in with the demo credentials: `demo@example.com` /
 
 ## Scripts
 
-| Script | Description |
-| --- | --- |
-| `npm run dev` | Start the Vite dev server |
-| `npm run build` | Typecheck, then build for production |
-| `npm run preview` | Preview the production build locally |
-| `npm run typecheck` | Run `vue-tsc --noEmit` |
-| `npm run lint` | Check lint + format issues with Biome |
-| `npm run lint:fix` | Fix lint + format issues with Biome |
-| `npm run lint:ci` | Biome's CI mode (no writes; fails on any issue) |
-| `npm run format` | Format all files with Biome |
-| `npm test` | Run the Vitest suite once |
-| `npm run test:watch` | Run Vitest in watch mode |
-| `npm run prepare` | Install lefthook git hooks (runs automatically after `npm install`) |
+| Script               | Description                                                         |
+| -------------------- | ------------------------------------------------------------------- |
+| `npm run dev`        | Start the Vite dev server                                           |
+| `npm run build`      | Typecheck, then build for production                                |
+| `npm run preview`    | Preview the production build locally                                |
+| `npm run typecheck`  | Run `vue-tsc --noEmit`                                              |
+| `npm run lint`       | Check lint + format issues with Biome                               |
+| `npm run lint:fix`   | Fix lint + format issues with Biome                                 |
+| `npm run lint:ci`    | Biome's CI mode (no writes; fails on any issue)                     |
+| `npm run format`     | Format all files with Biome                                         |
+| `npm test`           | Run the Vitest suite once                                           |
+| `npm run test:watch` | Run Vitest in watch mode                                            |
+| `npm run prepare`    | Install lefthook git hooks (runs automatically after `npm install`) |
 
 **Note:** `test`/`test:watch` set `NODE_OPTIONS=--no-experimental-webstorage`. Node 26 ships an
 experimental native `localStorage` global (on by default) that shadows jsdom's per-test
@@ -132,12 +132,12 @@ DEV_PROXY_TARGET=http://localhost:3000   # your backend
 `DEV_PROXY=true` makes `vite.config.ts` proxy `/api/*` to `DEV_PROXY_TARGET`. The backend must
 implement this contract:
 
-| Endpoint | Method | Body | Response |
-| --- | --- | --- | --- |
-| `/api/auth/login` | `POST` | `{ email, password }` | `{ user, accessToken, refreshToken }` |
-| `/api/auth/refresh` | `POST` | `{ refreshToken }` | `{ accessToken, refreshToken }` (rotated) |
-| `/api/auth/logout` | `POST` | — | `204 No Content` |
-| `/api/auth/me` | `GET` | — (Bearer token) | `{ id, email, name }` |
+| Endpoint            | Method | Body                  | Response                                  |
+| ------------------- | ------ | --------------------- | ----------------------------------------- |
+| `/api/auth/login`   | `POST` | `{ email, password }` | `{ user, accessToken, refreshToken }`     |
+| `/api/auth/refresh` | `POST` | `{ refreshToken }`    | `{ accessToken, refreshToken }` (rotated) |
+| `/api/auth/logout`  | `POST` | —                     | `204 No Content`                          |
+| `/api/auth/me`      | `GET`  | — (Bearer token)      | `{ id, email, name }`                     |
 
 Production builds always exclude the mock API — `src/main.ts` only imports `@/mocks/browser` via
 a dynamic import gated behind `import.meta.env.DEV`, which Vite statically eliminates from
@@ -154,17 +154,17 @@ production bundles.
 
 Kebab-case filenames with a role suffix, always imported through the `@/` alias:
 
-| Suffix | Role |
-| --- | --- |
-| `*.view.vue` | Routed page component |
-| `*.component.vue` | Reusable (non-routed) component |
-| `*.store.ts` | Pinia store |
-| `*.api.ts` | Typed API call group |
-| `*.client.ts` | Low-level transport (HTTP client) |
-| `*.util.ts` | Framework-agnostic helper |
-| `*.types.ts` | Shared TypeScript types |
-| `*.constant.ts` | Shared constants |
-| `*.test.ts` | Unit test (in `src/tests/`, mirrors `src/` structure) |
+| Suffix            | Role                                                  |
+| ----------------- | ----------------------------------------------------- |
+| `*.view.vue`      | Routed page component                                 |
+| `*.component.vue` | Reusable (non-routed) component                       |
+| `*.store.ts`      | Pinia store                                           |
+| `*.api.ts`        | Typed API call group                                  |
+| `*.client.ts`     | Low-level transport (HTTP client)                     |
+| `*.util.ts`       | Framework-agnostic helper                             |
+| `*.types.ts`      | Shared TypeScript types                               |
+| `*.constant.ts`   | Shared constants                                      |
+| `*.test.ts`       | Unit test (in `src/tests/`, mirrors `src/` structure) |
 
 ## Code style consistency
 
