@@ -45,8 +45,8 @@ rather than restating it — read both together.
 
 - **Standing item: recheck the vue-tsc / TypeScript 7 gate on every sweep.**
   This repo is deliberately held on TypeScript 6.x. Latest stable `vue` is
-  `3.5.45` (already the pin here) and peers `typescript: *`. `vue@3.6` is
-  still pre-release (`3.6.0-rc.15`) and stays
+  `3.5.46` (already the pin here) and peers `typescript: *`. `vue@3.6` is
+  still pre-release (`3.6.0-rc.16`) and stays
   out under the no-pre-release rule. The hold is `vue-tsc`: its installed
   major resolves `typescript/lib/tsc`, which TypeScript 7's `exports` map
   does not publish (`ERR_PACKAGE_PATH_NOT_EXPORTED`), and `vue-tsc` is
@@ -61,7 +61,7 @@ rather than restating it — read both together.
   _Done when:_ stable `vue-tsc` (or a stable v4 replacement) supports the
   TypeScript release npm calls `latest`, and this repo's `typescript` pin
   moves to `^7`.
-  _Rechecked 2026-11-16:_ `typescript@7.0.2` still does not export
+  _Rechecked 2026-11-21:_ `typescript@7.0.2` still does not export
   `./lib/tsc` (`ERR_PACKAGE_PATH_NOT_EXPORTED`). `vue-tsc@3.3.14` still
   resolves that path. Staying on `typescript@^6.0.3`. Latest 6.x is `6.0.3`,
   so the pin is current.
